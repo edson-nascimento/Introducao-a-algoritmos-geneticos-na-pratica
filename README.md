@@ -22,8 +22,8 @@ Defini uma taxa de mutação de 3%, também podendo ser alterada, que substitui 
 
 Há cinco classes neste exemplo:
 
-*Execute.java (Classe que recebe os parâmetros e chama execução do algorítimo);
-*Algoritimo.java (Métodos e variáveis estáticas para controle do AG, crossover, seleção…);
-*Populacao.java (Classe de domínio que define uma população, contém uma lista de indivíduos);
-*Individuo.java (Classe de domínio que representa um indivíduo, contém seus genes e valor de aptidão).
-*Tela.java (Classe responsável pela interface do programa).
+* Execute.java (Classe que recebe os parâmetros e chama execução do algorítimo);
+* Algoritimo.java (Métodos e variáveis estáticas para controle do AG, crossover, seleção…);
+* Populacao.java (Classe de domínio que define uma população, contém uma lista de indivíduos);
+* Individuo.java (Classe de domínio que representa um indivíduo, contém seus genes e valor de aptidão).
+* Tela.java (Classe responsável pela interface do programa).
