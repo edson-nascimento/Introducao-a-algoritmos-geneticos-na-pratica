@@ -9,7 +9,7 @@ Aqui você vai encontrar uma introdução de como começar a trabalhar com algor
 
 ### Detalhes da Aplicação
 
-Neste exemplo uso como função objetivo, encontrar um gene pré-definido por uma frase em uma string, por exemplo:  "hello algoritmo genético"
+Neste exemplo uso como função objetivo, encontrar um gene pré-definido por uma frase em uma string, por exemplo:  `hello algoritmo genético`
 
 A população inicial será criada com 50 indivíduos aleatórios, com genes de mesmo comprimento que a solução, a aptidão será calculada pelo número de letras iguais a solução, por exemplo, se a solução fosse ‘ola’, o gene ‘olq’ teria aptidão 2 e o gene ‘qlw’ teria aptidão 1.
 
