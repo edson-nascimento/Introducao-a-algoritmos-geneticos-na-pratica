@@ -7,6 +7,12 @@ public class Algoritimo {
     private static double taxaDeMutacao;
     private static String caracteres;
 
+    /**
+     * 
+     * @param populacao
+     * @param elitismo
+     * @return Populacao
+     */
     public static Populacao novaGeracao(Populacao populacao, boolean elitismo) {
         Random r = new Random();
         

@@ -1,3 +1,5 @@
+import java.io.ObjectInputStream.GetField;
+
 public class Execute {
 	static StringBuilder resposta;
 	static String melhorIndividuo;
@@ -59,10 +61,19 @@ public class Execute {
 
             /**
              * Cria uma nova população
+             * @var
              */
             populacao = Algoritimo.novaGeracao(populacao, eltismo);
+            
+            resposta.append("\n\n **Geração** " + geracao+"\n");
+            
+            for (int i = 1; i < populacao.getNumIndividuos(); i++) {
+            	resposta.append("Ind "+i+" => Fitness: " + populacao.getIndivduo(i).getAptidao() + " => Cromossomo: " + populacao.getIndivduo(i).getGenes()+"\n");
+			}
+            
+            resposta.append("Melhor =>>>>>>  Fitness: " + populacao.getIndivduo(0).getAptidao() + " => Cromossomo: " + populacao.getIndivduo(0).getGenes()+"\n");
 
-            resposta.append("Geração " + geracao + " | Aptidão: " + populacao.getIndivduo(0).getAptidao() + " | Melhor: " + populacao.getIndivduo(0).getGenes()+"\n");
+            resposta.append("\n\n");
             
             /**
              * Verifica se já ancançou uma solução válida
@@ -70,13 +81,12 @@ public class Execute {
             temSolucao = populacao.temSolocao(Algoritimo.getSolucao());
         }
 
-        if (geracao == numMaxGeracoes) {
+        if (geracao == numMaxGeracoes && !temSolucao) {
             resposta.append("Número Máximo de épocas alcançado | individuo: " + populacao.getIndivduo(0).getGenes() + " | Fitness: " + populacao.getIndivduo(0).getAptidao()+"\n");
             melhorIndividuo = "Geração: " + geracao + " | " + populacao.getIndivduo(0).getGenes() + " (Fitness: " + populacao.getIndivduo(0).getAptidao() + ")";
         }
 
         if (temSolucao) {
-            resposta.append("\nEncontrado resultado na geração " + geracao + " | " + populacao.getIndivduo(0).getGenes() + " (Aptidão: " + populacao.getIndivduo(0).getAptidao() + ")\n");
             melhorIndividuo = "Solução ótima  Geração: " + geracao + " | individuo: " + populacao.getIndivduo(0).getGenes() + " (Fitness: " + populacao.getIndivduo(0).getAptidao() + ")";
         }
     }

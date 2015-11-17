@@ -58,6 +58,7 @@ public class Tela extends JFrame {
 		contentPane.add(lblFrase);
 		
 		txtFrase = new TextArea();
+		txtFrase.setText("algoritmo gen\u00E9tico");
 		txtFrase.setFont(new Font("Consolas", Font.PLAIN, 12));
 		txtFrase.setBounds(21, 73, 308, 108);
 		contentPane.add(txtFrase);
@@ -69,7 +70,7 @@ public class Tela extends JFrame {
 		
 		txtEpoca = new TextField();
 		txtEpoca.setFont(new Font("Consolas", Font.PLAIN, 12));
-		txtEpoca.setText("10");
+		txtEpoca.setText("100");
 		txtEpoca.setBounds(109, 243, 148, 22);
 		contentPane.add(txtEpoca);
 		
@@ -86,7 +87,7 @@ public class Tela extends JFrame {
 		
 		txtCross = new TextField();
 		txtCross.setFont(new Font("Consolas", Font.PLAIN, 12));
-		txtCross.setText("0.6");
+		txtCross.setText("0.8");
 		txtCross.setBounds(109, 325, 148, 22);
 		contentPane.add(txtCross);
 		

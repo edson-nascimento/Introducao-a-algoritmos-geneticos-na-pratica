@@ -3,7 +3,11 @@ public class Populacao {
     private Individuo[] individuos;
     private int tamPopulacao;
 
-    //cria uma popula√ß√£o com indiv√≠duos aleat√≥ria
+    /**
+     * Cria uma populaÁ„o com individuos aleatÛrios
+     * @param numGenes
+     * @param tamPop
+     */
     public Populacao(int numGenes, int tamPop) {
         tamPopulacao = tamPop;
         individuos = new Individuo[tamPop];
@@ -12,7 +16,10 @@ public class Populacao {
         }
     }
 
-    //cria uma popula√ß√£o com indiv√≠duos sem valor, ser√° composto posteriormente
+    /**
+     * Cria uma populaÁ„o com individuos sem valor, que v„o ser preenchidos posteriormente
+     * @param tamPop
+     */
     public Populacao(int tamPop) {
         tamPopulacao = tamPop;
         individuos = new Individuo[tamPop];
@@ -21,12 +28,19 @@ public class Populacao {
         }
     }
 
-    //coloca um indiv√≠duo em uma certa posi√ß√£o da popula√ß√£o
+    /**
+     * Coloca un individuo em uma certa posiÁ„o da populaÁ„o
+     * @param individuo
+     * @param posicao
+     */
     public void setIndividuo(Individuo individuo, int posicao) {
         individuos[posicao] = individuo;
     }
 
-    //coloca um indiv√≠duo na pr√≥xima posi√ß√£o dispon√≠vel da popula√ß√£o
+    /**
+     * Coloca un individuo na prÛxima posiÁ„o disponÌvel na populaÁ„o
+     * @param individuo
+     */
     public void setIndividuo(Individuo individuo) {
         for (int i = 0; i < individuos.length; i++) {
             if (individuos[i] == null) {
@@ -36,7 +50,11 @@ public class Populacao {
         }
     }
 
-    //verifica se algum individuo da populaÁ„oo possui a soluÁ„o
+    /**
+     * Verifica se algum individuo da populaÁ„o tem a soluÁ„o
+     * @param solucao
+     * @return
+     */
     public boolean temSolocao(String solucao) {
         Individuo i = null;
         for (int j = 0; j < individuos.length; j++) {
@@ -51,7 +69,9 @@ public class Populacao {
         return true;
     }
 
-    //ordena a popula√ß√£o pelo valor de aptid√£o de cada indiv√≠duo, do maior valor para o menor, assim se eu quiser obter o melhor indiv√≠duo desta popula√ß√£o, acesso a posi√ß√£o 0 do array de indiv√≠duos
+    /**
+     * Ordena a populaÁ„o pelo valor da fitness assim quando querer pegar os melhores  individuo eles j· estar„o em sequencia
+     */
     public void ordenaPopulacao() {
         boolean trocou = true;
         while (trocou) {
@@ -67,7 +87,10 @@ public class Populacao {
         }
     }
 
-    //n√∫mero de indiv√≠duos existentes na popula√ß√£o
+    /**
+     * Numero de indviduos existentes na populaÁ„o
+     * @return
+     */
     public int getNumIndividuos() {
         int num = 0;
         for (int i = 0; i < individuos.length; i++) {
